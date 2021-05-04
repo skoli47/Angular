@@ -1,2 +1,15 @@
-<app-employee></app-employee>
-<employee-list></employee-list>
+<!-- Routing HTML -->
+<div style="padding:5x">
+<ul class="nav nav-tabs">
+    <li>
+        <a routerLink="home">Home</a>
+    </li>
+    <li>
+        <a routerLink="employee">Employee</a>
+    </li>
+    <li>
+        <a routerLink="employeelist">Employee List</a>
+    </li>
+</ul>
+</div>
+<router-outlet></router-outlet>   <!--  This is container where component will be loaded -->

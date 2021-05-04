@@ -1,0 +1,3 @@
+Shift + alt + f == To align text in file
+ctrl + alt + arrow == Multiple line editing 
+
