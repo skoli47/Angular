@@ -1,0 +1,92 @@
+<p>employee works!</p>
+
+<!-- =========================== CLASS BINDING================================== -->
+<!-- These bindings flow data in one direction i.e from a component class property to an HTMl element property
+--Interpolation
+--Property Binding
+--Attribute Binding
+--Class Binding
+--Style Binding -->
+
+Apply class using Class attribute: <button class="italic" [class]="ClassesToApply">My Button</button> <!--Apply class. Will not override existing class-->
+
+<br/>
+<br/>
+
+Apply class conditionally : <button class="italic" [class.boldClass]="applyboldClass">My Button</button> 
+<!--It will apply boldClass if applyboldClass is true. It will not remove existing class - italic -->
+
+<br/>
+<br>
+Add multiple class using ngClass :  <button class="italic" [ngClass]="addClasses()">My Button</button>
+<!--addClasses method will add bold and italic class to existing class -->
+
+<!-- =========================END CLASS BINDING================================== -->
+
+<br>
+<br>
+<!-- =========================== STYLE BINDING================================== -->
+Style Binding : <button style="color:red" [style.fontWeight]="isBold ? 'bold' : 'normal'">My Button</button>
+<!-- Style bindig can be written in camel case or using dash(-) seperator eg: fontWeight or font-weight  -->
+
+<br>
+<br>
+Style Binding - font size in px: <button style="color: red;" [style.font-size.px]="btnFontSize">My Button</button> 
+
+<br>
+<br>
+Style Binding - using ngStyle : <button style="color: red;" [ngStyle]="addStyle()">My Button</button> 
+<!-- =========================END STYLE BINDING================================== -->
+
+
+<br>
+<br>
+<!-- =========================EVENT BINDING====================================== -->
+Event Binding: <button (click)="onClick()">Click Me</button>
+<br>
+<br>
+Event Binding alternate way using 'on' prefix (Canonical Form) : <button on-click="onClick()">Click Me</button>
+
+
+<br>
+<br>
+<div style="border: 1px solid;">
+<table border="1">
+    <tr>
+        <td>FirstName</td>
+        <td>{{firstname}}</td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td>{{lastname}}</td>
+    </tr>
+<!-- *ng is structural directive -->
+    <tr *ngIf="showDetails">
+        <td>Gender</td>
+        <td>{{gender}}</td>
+    </tr>
+    <tr *ngIf="showDetails">
+        <td>Age</td>
+        <td>{{age}}</td>
+    </tr>
+</table>
+<br>
+<button (click)="toggleDetails()">{{showDetails? 'Hide': 'Show'}} Details</button>
+</div>
+
+<!-- =========================END EVENT BINDING================================== -->
+
+<!-- =========================TWO WAY DATA BINDING================================== -->
+<br>
+<br>
+Two Way Data Binding :
+<br>    
+<!-- ngModel is combination of property binding and event binding -->
+<!-- Need to import formsModule in app.module.ts to use ngModel -->
+<!-- The square bracket on the outside are for property binding -->
+<!-- The parantesis on the inside are for event binding -->
+<!-- To easily remember this syntax, compare it to a banana in a box [()] -->
+<input [(ngModel)] = 'name' >
+<br>
+You entered text is : {{name}}
+<!-- =========================END TWO WAY DATA BINDING================================== -->
